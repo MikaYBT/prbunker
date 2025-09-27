@@ -1,0 +1,33 @@
+.navigation{
+    position: fixed;
+    top: 0px;
+    display: flex;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 64px;
+}
+
+.navigation__list{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+.navigation__side-menu{
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .navigation__list{
+        display: none;
+    }
+}

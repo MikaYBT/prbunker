@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="body.css">
     <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="main.css">
     <title>Приморский бункер</title>
 </head>
 <body>
@@ -19,12 +20,32 @@
                     <li><a href="#" class="btn btn--dark">Контакты</a></li>
                 </ul>
                 <div class="navigation__side-menu">
-                    <a href="#" class="btn btn--sapphire">Бесплатная консультация</a>
-                    <img src="images/icons/menu_24dp_000_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                    <a href="#" class="navigation__cta btn btn--sapphire">Бесплатная консультация</a>
+                    <img src="images/icons/menu.svg" alt="" class="navigation__menu-button">
                 </div>
              </div>
+             <div class="collapse-menu">
+                <ul class="collapse-menu__list">
+                    <li><a href="#" class="btn btn--dark">Услуги</a></li>
+                    <li><a href="#" class="btn btn--dark">О нас</a></li>
+                    <li><a href="#" class="btn btn--dark">Контакты</a></li>
+                </ul>
+                <a href="#" class="btn btn--sapphire">Консультация</a>
+                <img src="images/icons/close.svg" alt="" class="collapse-menu__close-button">
+             </div>
+             <div class="collapse-menu__overlay"></div>
+             <script src="scripts/menu.js"></script>
         </nav>
-        
+        <main>
+            <section class="hero">
+                <div class="hero__info">
+                    <h1 class="hero__header">Ваш стратегический партнёр в снабжении топливом</h1>
+                    <p class="text text--big">Реализовываем надёжные поставки топлива и нефтепродуктов с 2006 года</p>
+                </div>
+                <a href="#" class="btn btn--white30">Получить бесплатную консультацию</a>
+                <video src="videos/hero.mp4" class="hero__video"  autoplay loop muted playsinline></video>
+            </section>
+        </main>
     </div>
 </body>
 </html>

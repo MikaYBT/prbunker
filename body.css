@@ -1,19 +1,17 @@
 @font-face {
 	font-family: 'GolosTextWebVF';
 	src: 
-		url('fonts/Golos-Text_VF.woff2') format('woff2'),
-		url('fonts/Golos-Text_VF.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
+		url('fonts/golos-text_vf.woff2') format('woff2'),
+		url('fonts/golos-text_vf.woff') format('woff');
+
 }
 
 @font-face {
 	font-family: 'GolosUIWebVF';
 	src: 
-		url('fonts/Golos-UI_VF.woff2') format('woff2'),
-		url('fonts/Golos-UI_VF.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
+		url('fonts/golos-ui_vf.woff2') format('woff2'),
+		url('fonts/golos-ui_vf.woff') format('woff');
+
 }
 
 :root{
@@ -26,6 +24,8 @@
 	--black: #000000;
 	--white: #FFFFFF;
 	--sapphire: #0F52BA;
+	--grey: #666666;
+	--white30: #5786CF;
 }
 
 h1{
@@ -35,11 +35,15 @@ h1{
     line-height: 120%;
 }
 
-p{
+.text{
 	font-family: 'GolosUIWebVF', sans-serif;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 120%;
+}
+
+.text--big{
+	font-size: 24px;
 }
 
 a{
@@ -57,6 +61,11 @@ a{
 
 .btn--dark{
 	color: var(--black);
+	transition: color 0.2s;
+}
+
+.btn--dark:hover{
+	color: var(--grey);
 }
 
 .btn--sapphire{
@@ -68,6 +77,28 @@ a{
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
+	transition: background-color 0.2s;
+}
+
+.btn--sapphire:hover{
+	background-color: var(--white30);
+}
+
+.btn--white30{
+	color: var(--white);
+	background-color: var(--white30);
+	border-radius: 8px;
+	display: flex;
+	padding: 16px 26px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	transition: background-color 0.2s, color 0.2s;
+}
+
+.btn--white30:hover{
+	background-color: var(--white);
+	color: var(--black);
 }
 
 @media screen and (max-width: 1440px) {

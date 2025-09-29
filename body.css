@@ -28,6 +28,11 @@
 	--white30: #5786CF;
 }
 
+html, body {
+	width: 100vw;
+	overflow-x: hidden;
+}
+
 h1{
     font-family: 'GolosTextWebVF', sans-serif;
     font-weight: 700;
@@ -38,7 +43,7 @@ h1{
 .text{
 	font-family: 'GolosUIWebVF', sans-serif;
 	font-weight: 400;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 120%;
 }
 
@@ -54,8 +59,8 @@ a{
 
 .btn{
 	text-decoration: none;
-	font-weight: 700;
-	font-size: 20px;
+	font-weight: 500;
+	font-size: 18px;
 	line-height: 120%;
 }
 
@@ -73,7 +78,7 @@ a{
 	background-color: var(--sapphire);
 	border-radius: 8px;
 	display: flex;
-	padding: 16px 26px;
+	padding: 14px 24px;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
@@ -89,7 +94,7 @@ a{
 	background-color: var(--white30);
 	border-radius: 8px;
 	display: flex;
-	padding: 16px 26px;
+	padding: 14px 24px;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
@@ -103,30 +108,36 @@ a{
 
 @media screen and (max-width: 1440px) {
 	h1{
-		font-size: 60px;
+		font-size: 56px;
 	}
 }
 @media screen and (max-width: 1024px) {
 	h1 {
-		font-size: 56px;
+		font-size: 48px;
 	}
     
 }
 @media screen and (max-width: 768px) {
 	h1{
-		font-size: 48px;
+		font-size: 36px;
 	}
 	
 }
 @media screen and (max-width: 425px) {
 	h1{
-		font-size: 36px;
+		font-size: 30px;
 	}
 	p{
 		font-size: 18px;
 	}
+	.text--big{
+		font-size: 20px;
+	}
 	
 }
 @media screen and (max-width: 320px) {
+	h1{
+		font-size: 24px;
+	}
 
 }

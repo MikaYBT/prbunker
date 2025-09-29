@@ -26,6 +26,12 @@
 	--sapphire: #0F52BA;
 	--grey: #666666;
 	--white30: #5786CF;
+	--white70: #B7CBEA; 
+	--white90: #E7EDF8;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -93,7 +99,7 @@ a{
 	background-color: var(--sapphire);
 	border-radius: 8px;
 	display: flex;
-	padding: 14px 24px;
+	padding: 16px 32px;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
@@ -109,7 +115,7 @@ a{
 	background-color: var(--white30);
 	border-radius: 8px;
 	display: flex;
-	padding: 14px 24px;
+	padding: 16px 32px;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;

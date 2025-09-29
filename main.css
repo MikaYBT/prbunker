@@ -12,6 +12,7 @@
     gap: 0;
     background: linear-gradient(0deg, #0F52BA00 20%, #0F52BA 60%);
     padding: 128px 0 0 0;
+    margin: 0 0 256px 0;
 }
 
 .hero__info{
@@ -43,16 +44,23 @@
 
 .hero__video{
     position: absolute;
+    width: 101%;
     bottom: 0;
     z-index: -1;
     object-fit: cover;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 /* Services */
 
 .services{
-    padding: 128px 64px 64px 64px;
+    padding: 0px 64px 64px 64px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 128px;
+    scroll-margin-top: 64px
 
 }
 
@@ -80,13 +88,6 @@
     align-self: start;
     top: 35vh;      
     background-color: var(--white);    
-}
-
-
-.services__info--bottom{
-    position: absolute;
-    bottom: 0px;
-    transform: none;
 }
 
 .services__info-text{
@@ -132,10 +133,91 @@
     background: linear-gradient(90deg, #0F52BA 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/train.jpg) lightgray 50% / cover no-repeat;
 }
 
-
 .services__card--truck{
     background: linear-gradient(90deg, #0F52BA 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/truck.jpg) lightgray 50% / cover no-repeat;
 }
+
+.services__advantages{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.services__map{
+    display: flex;
+    box-sizing: border-box;
+    height: 800px;
+    padding: 64px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    align-self: stretch;
+    border-radius: 16px;
+    text-align: center;
+    background: var(--white90);
+    clip-path: padding-box;
+}
+
+.services__map-text{
+    max-width: 600px;
+}
+
+.services__map-image{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.services__advantages{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.services__advantages-block{
+    display: flex;
+    box-sizing: border-box;
+    gap: 32px;
+    width: 100%;
+}
+
+.services__advantages-card{
+    display: flex;
+    width: 100%;  
+    min-width: 0;
+    height: 576px;
+    padding: 32px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white70);
+    border-radius: 16px;
+}
+
+.services__advantages-card-info{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.services__advantages-image-wrapper{
+    display: flex;
+    max-height: 368px;
+}
+
+.services__advantages-image{     
+    height: 100%;
+}
+
+@media screen and (max-width: 1440px) {
+    .hero__video{
+        width: 150%;
+    }
+}
+
+
 
 @media screen and (max-width: 1024px) {
     .hero{
@@ -148,19 +230,47 @@
         max-width: 730px;
     }
 
+    .hero__video{
+        width: 200%;
+    }
+
     .services{
-        padding: 128px 32px 64px 32px;
+        padding: 0px 32px 64px 32px;
     }
 
     .services__grid{
         grid-template-columns: 1fr 1fr;
+    }
+
+    .services__map{
+        padding: 32px;
+        height: 602px;
+    }
+
+    .services__advantages-block{
+        flex-direction: column;
+    }
+    .services__advantages-card{
+        width: auto;
+        flex-direction: row;
+        height: 272px;
+    }
+    .services__advantages-image-wrapper{
+        max-width: 400px;
+    }
+    .services__advantages-image{
+        height: auto;
+        width: 100%;
     }
     
 }
 
 
 @media screen and (max-width: 768px) {
-    
+    .hero{
+        margin: 0 0 0 0;
+    }
+
     .hero__header{
         max-width: 576px;
     }
@@ -172,26 +282,38 @@
         top: 0;
         padding: 96px 0 32px 0;
     }
+    .hero__video{
+        width: 250%;
+    }
 
     
 }
 
 @media screen and (max-width: 425px) {
     .hero{
-        background: linear-gradient(0deg, #0F52BA00 0%, #0F52BA 60%);
+        background: linear-gradient(0deg, #0F52BA00 0%, #0F52BA 30%);
     }
     .hero__info{
         padding: 16px;
     }
     .services{
-        padding: 128px 16px 64px 16px;
+        padding: 0px 16px 64px 16px;
     }
-    /* .hero__video{
-        object-fit: contain;
-        width: 800px;
-        left: 50%;
-        transform: translate(-50%, 0);
-    } */
+
+    .services__map{
+        padding: 32px;
+        height: 416px;
+    }
+
+    .services__advantages-card{
+        flex-direction: column;
+        height: 416px;
+    }
+
+    .services__advantages-image-wrapper{
+        max-width: 200px;
+    }
+
 }
 
     

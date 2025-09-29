@@ -13,6 +13,7 @@
     background: linear-gradient(0deg, #0F52BA00 20%, #0F52BA 60%);
     padding: 128px 0 0 0;
     margin: 0 0 256px 0;
+    overflow: hidden;
 }
 
 .hero__info{

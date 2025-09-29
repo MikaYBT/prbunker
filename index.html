@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <link rel="stylesheet" href="main.css">
     <title>Приморский бункер</title>
 </head>
+
 <body>
     <div class="wrapper">
         <nav>
-             <div class="navigation">
+            <div class="navigation">
                 <img src="images/logos/Приморский бункер sapphire.svg" alt="" class="navigation__logo">
                 <ul class="navigation__list">
                     <li><a href="#" class="btn btn--dark">Услуги</a></li>
@@ -23,8 +25,8 @@
                     <a href="#" class="navigation__cta btn btn--sapphire">Консультация</a>
                     <img src="images/icons/menu.svg" alt="" class="navigation__menu-button">
                 </div>
-             </div>
-             <div class="collapse-menu">
+            </div>
+            <div class="collapse-menu">
                 <ul class="collapse-menu__list">
                     <li><a href="#" class="btn btn--dark">Услуги</a></li>
                     <li><a href="#" class="btn btn--dark">О нас</a></li>
@@ -32,20 +34,51 @@
                 </ul>
                 <a href="#" class="btn btn--sapphire">Консультация</a>
                 <img src="images/icons/close.svg" alt="" class="collapse-menu__close-button">
-             </div>
-             <div class="collapse-menu__overlay"></div>
-             <script src="scripts/menu.js"></script>
+            </div>
+            <div class="collapse-menu__overlay"></div>
+            <script src="scripts/menu.js"></script>
         </nav>
         <main>
             <section class="hero">
                 <div class="hero__info">
                     <h1 class="hero__header">Ваш стратегический партнёр в снабжении топливом</h1>
-                    <p class="hero__text text text--big">Реализовываем надёжные поставки топлива и нефтепродуктов с 2006 года</p>
+                    <p class="hero__text text text--big">Реализовываем надёжные поставки топлива и нефтепродуктов с 2006
+                        года</p>
                     <a href="#" class="btn btn--white30">Получить бесплатную консультацию</a>
                 </div>
-                <video src="videos/hero.mp4" class="hero__video"  autoplay loop muted playsinline></video>
+                <video src="videos/hero.mp4" class="hero__video" autoplay loop muted playsinline></video>
+            </section>
+            <section class="services">
+                <div class="services__grid">
+                    <div class="services__info">
+                        <h2 class="services__header">Предлагаем гибкие решения поставок нефтепродуктов</h2>
+                        <p class="services__info-text text">Приморский бункер специализируется на оптовой торговле
+                            нефтепродуктами, включая снабжение судов топливом</p>
+                    </div>
+                    <div class="services__blocks">
+                        <div class="services__card services__card--ship">
+                            <h3 class="services__card-header">Бункеровка судов топливом</h3>
+                            <p class="services__card-text text">Доставка судном-бункеровщиком или автотранспортом на
+                                судно получателя, а также выдача нефтепродуктов из танков судна-накопителя на судно
+                                покупателя</p>
+                        </div>
+                        <div class="services__card services__card--train">
+                            <h3 class="services__card-header">Поставка железнодорожным транспортом</h3>
+                            <p class="services__card-text text">Доставка до станции назначения или передача перевозчику
+                                на станции отгрузки </p>
+                        </div>
+                        <div class="services__card services__card--truck">
+                            <h3 class="services__card-header">Поставка автотранспортом</h3>
+                            <p class="services__card-text text">Доставка до пункта разгрузки или передача на условиях
+                                самовывоза </p>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="scripts/services.js"></script>
             </section>
         </main>
     </div>
 </body>
+
 </html>

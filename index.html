@@ -22,7 +22,7 @@
                     <li><a href="#" class="btn btn--dark">Контакты</a></li>
                 </ul>
                 <div class="navigation__side-menu">
-                    <a href="#" class="navigation__cta btn btn--sapphire">Консультация</a>
+                    <a href="#" class="navigation__cta cta btn btn--sapphire">Консультация</a>
                     <img src="images/icons/menu.svg" alt="" class="navigation__menu-button">
                 </div>
             </div>
@@ -32,11 +32,26 @@
                     <li><a href="#" class="collapse-menu__button btn btn--dark">О нас</a></li>
                     <li><a href="#" class="collapse-menu__button btn btn--dark">Контакты</a></li>
                 </ul>
-                <a href="#" class="btn btn--sapphire">Консультация</a>
+                <a href="#" class="cta btn btn--sapphire">Консультация</a>
                 <img src="images/icons/close.svg" alt="" class="collapse-menu__close-button">
             </div>
             <div class="collapse-menu__overlay"></div>
-            <script src="scripts/menu.js"></script>
+            <div class="modal-form">
+                <h3>Оставьте заявку</h3>
+                <p class="text">Заполните форму, и мы свяжемся с вами в течении 1-2 дней</p>
+                <img src="images/icons/close.svg" alt="" class="modal-form__close-button">
+                <form action="" class="modal-form__inputs">
+                    <input type="text" placeholder="Как вас зовут?">
+                    <input type="text" placeholder="+0 (000) 000-00-00">
+                    <input type="text" placeholder="example@mail.com">
+                    <div class="modal-form__checkbox">
+                        <input type="checkbox" id="agreement" name="agreement">
+                        <label for="agreement" class="text text--small">Я ознакомился с политикой конфиденциальности и даю согласие на обработку персональных данных</label>
+                    </div>
+                    <input type="submit" class="btn btn--sapphire">
+                </form>
+            </div>
+            
         </nav>
         <main>
             <section class="hero">
@@ -44,7 +59,7 @@
                     <h1 class="hero__header">Ваш стратегический партнёр в снабжении топливом</h1>
                     <p class="hero__text text text--big">Реализовываем надёжные поставки топлива и нефтепродуктов с 2006
                         года</p>
-                    <a href="#" class="btn btn--white30">Получить бесплатную консультацию</a>
+                    <a href="#" class="cta btn btn--white30">Получить бесплатную консультацию</a>
                 </div>
                 <video src="videos/hero.mp4" class="hero__video" autoplay loop muted playsinline></video>
             </section>
@@ -114,6 +129,8 @@
             </section>
         </main>
     </div>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/form.js"></script>
 </body>
 
 </html>

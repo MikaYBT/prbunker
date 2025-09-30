@@ -32,11 +32,9 @@
 
 html {
   scroll-behavior: smooth;
-  width: 100vw;
 }
 
 body {
-	width: 100vw;
 	overflow-x: hidden;
 }
 
@@ -71,6 +69,10 @@ h3{
 
 .text--big{
 	font-size: 24px;
+}
+
+.text--small{
+	font-size: 16px;
 }
 
 a{
@@ -127,6 +129,26 @@ a{
 	background-color: var(--white);
 	color: var(--black);
 }
+
+input[type="text"]{
+	display: flex;
+	width: 420px;
+	padding: 18.5px 24px;
+	align-items: center;
+	gap: 10px;
+	border-radius: 8px;
+	border: 1px solid rgba(0, 0, 0, 0.20);
+	background: var(--white);
+	font-family: 'GolosUIWebVF', sans-serif;
+	color: var(--black);
+}
+
+input[type="submit"]
+{
+	border: none;
+	font-weight: 'GolosUIWebVF', sans-serif;
+}
+
 
 @media screen and (max-width: 1440px) {
 	h1{

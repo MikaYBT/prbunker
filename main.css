@@ -220,6 +220,35 @@
     
 }
 
+.about-us{
+    display: flex;
+    padding: 128px 64px;
+}
+
+.about-us__story{
+    display: grid;
+    height: 570px;
+    row-gap: 32px;
+    column-gap: 32px;
+    align-self: stretch;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+}
+
+.about-us__logo{
+    display: flex;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.about-us__info{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    grid-row: 1;
+    grid-column: 2;
+}
+
 @media screen and (max-width: 1440px) {
     .hero__video{
         width: 150%;

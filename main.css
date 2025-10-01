@@ -222,12 +222,16 @@
 
 .about-us{
     display: flex;
-    padding: 128px 64px;
+    flex-direction: column;
+    align-items: center;
+    padding: 128px 0;
+    gap: 96px;
 }
 
 .about-us__story{
+    padding: 0 64px;
     display: grid;
-    height: 570px;
+    height: auto;
     row-gap: 32px;
     column-gap: 32px;
     align-self: stretch;
@@ -236,9 +240,15 @@
 }
 
 .about-us__logo{
-    display: flex;
     grid-row: 1;
     grid-column: 1;
+    width: 100%;
+    position: sticky;
+    z-index: 2;
+    height: min-content;
+    align-self: start;
+    top: 35vh;      
+    background-color: var(--white);
 }
 
 .about-us__info{
@@ -247,6 +257,30 @@
     gap: 32px;
     grid-row: 1;
     grid-column: 2;
+    max-width: 900px;
+}
+
+@keyframes scroll-image {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-100%); }
+}
+
+.about-us__carousel{
+    display: flex;  
+    max-width: 100%;
+}
+
+.about-us__carousel-scroll-part{
+    display: flex;
+    animation: scroll-image 20s linear infinite;
+}
+
+.about-us__carousel-photo{
+    width: 504px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    border-radius: 16px;
+    margin: 16px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -292,7 +326,7 @@
         width: auto;
         flex-direction: row;
         height: 272px;
-        padding: 0 16px 0 0;
+        padding: 32px;
     }
     
     .services__advantages-card-info{
@@ -302,6 +336,15 @@
     .services__advantages-image-wrapper{
         width: auto;
         height: 100%;
+    }
+
+    .about-us__story{
+        padding: 0 32px;
+
+    }
+
+    .about-us__carousel-photo{
+        width: 300px;
     }
 
 }
@@ -327,6 +370,9 @@
         width: 250%;
     }
 
+    .about-us__story{
+        grid-template-columns: 1fr 3fr;
+    }
 
 
     
@@ -351,6 +397,19 @@
     .services__advantages-card{
         flex-direction: column;
         height: 416px;
+    }
+
+    .about-us{
+        gap: 64px;
+    }
+
+    .about-us__story{
+        padding: 0 16px;
+    }
+
+    .about-us__carousel-photo{
+        width: 200px;
+        margin: 8px;
     }
 
 

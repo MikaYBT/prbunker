@@ -130,6 +130,15 @@ a{
 	color: var(--black);
 }
 
+.btn--white{
+	color: var(--white);
+	transition: color 0.2s;
+}
+
+.btn--white:hover{
+	color: var(--white70);
+}
+
 input[type="text"]{
 	display: flex;
 	padding: 18.5px 24px;

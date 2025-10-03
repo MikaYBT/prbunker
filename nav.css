@@ -222,7 +222,7 @@
     
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
     .navigation{
         padding: 0px 16px;
     }

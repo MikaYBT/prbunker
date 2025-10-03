@@ -68,7 +68,7 @@ h3{
 }
 
 .text--big{
-	font-size: 24px;
+	font-size: 28px;
 }
 
 .text--small{
@@ -107,6 +107,7 @@ a{
 	align-items: center;
 	gap: 10px;
 	transition: background-color 0.2s;
+	border: var(--white30) 1px solid;
 }
 
 .btn--sapphire:hover{
@@ -115,10 +116,12 @@ a{
 
 .btn--white30{
 	color: var(--white);
-	background-color: var(--white30);
+	background: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(20px);
+	border: var(--white30) 1px solid;
 	border-radius: 8px;
 	display: flex;
-	padding: 16px 32px;
+	padding: 18px 36px;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
@@ -155,7 +158,7 @@ input[type="text"]{
 
 input[type="submit"]
 {
-	border: none;
+	border: var(--white30) 1px solid;
 	font-family: 'GolosUIWebVF', sans-serif;
 }
 
@@ -165,7 +168,7 @@ input[type="submit"]
 		font-size: 56px;
 	}
 	h2{
-		font-size: 44px;
+		font-size: 40px;
 	}
 	h3{
 		font-size: 32px;
@@ -176,24 +179,27 @@ input[type="submit"]
 		font-size: 48px;
 	}
 	h2{
-		font-size: 40px;
+		font-size: 30px;
 	}
 	h3{
-		font-size: 32px;
+		font-size: 26px;
+	}
+	.text--big{
+		font-size: 22px;
 	}
 }
 @media screen and (max-width: 768px) {
 	h1{
-		font-size: 40px;
+		font-size: 36px;
 	}
 	h2{
-		font-size: 36px;
+		font-size: 30px;
 	}
 	h3{
 		font-size: 28px;
 	}
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
 	h1{
 		font-size: 30px;
 	}
@@ -211,7 +217,7 @@ input[type="submit"]
 	}
 	
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 380px) {
 	h1{
 		font-size: 24px;
 	}

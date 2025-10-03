@@ -29,7 +29,7 @@
 }
 
 .hero__text{
-    max-width: 700px;
+    max-width: 850px;
     margin: 0 0 16px 0;
 }
 
@@ -70,8 +70,9 @@
     row-gap: 64px;
     column-gap: 32px;
     grid-template-rows: auto;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 3fr;
     color: var(--black);
+    
 }
 
 .services__info{
@@ -88,6 +89,7 @@
     align-self: start;
     top: 35vh;      
     background-color: var(--white);    
+    max-width: 600px;
 }
 
 .services__info-text{
@@ -120,25 +122,36 @@
 }
 
 .services__card-header{
-    max-width: 350px;
+    display: flex;
+    gap: 24px;
     z-index: 1;
+    max-width: 700px;
+}
+
+.services__header > h2{
+    text-wrap: balance;
+}
+
+.services__card-icon{
+    width: 64px;
 }
 
 .services__card-text{
-    max-width: 400px;
+    max-width: 650px;
+    text-wrap: balance;
     z-index: 1;
 }
 
 .services__card--ship{
-    background: linear-gradient(90deg, #0f53ba88 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/ship.jpg) lightgray 50% / cover no-repeat;
+    background: linear-gradient(90deg, #0f53ba 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/ship.jpg) lightgray 50% / cover no-repeat;
 }
 
 .services__card--train{
-    background: linear-gradient(90deg, #0f53ba88 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/train.jpg) lightgray 50% / cover no-repeat;
+    background: linear-gradient(90deg, #0f53ba 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/train.jpg) lightgray 50% / cover no-repeat;
 }
 
 .services__card--truck{
-    background: linear-gradient(90deg, #0f53ba88 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/truck.jpg) lightgray 50% / cover no-repeat;
+    background: linear-gradient(90deg, #0f53ba 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/truck.jpg) lightgray 50% / cover no-repeat;
 }
 
 .services__card-overlay{
@@ -311,6 +324,21 @@
     .hero__video{
         width: 150%;
     }
+    .hero__header{
+        max-width: 850px;
+    }
+
+    .services__grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .services__info{
+        max-width: 500px;
+    }
+
+    .services__card-header{
+        gap: 16px;
+    }
 }
 
 
@@ -321,7 +349,11 @@
         padding: 0 32px;
     }
     .hero__header{
-        max-width: 730px;
+        max-width: 700px;
+    }
+
+    .hero__text{
+        max-width: 500px;
     }
 
     .hero__video{
@@ -334,6 +366,19 @@
 
     .services__grid{
         grid-template-columns: 1fr 1fr;
+    }
+
+    .services__info{
+        max-width: 400px;
+    }
+
+    .services__info-text{
+        max-width: 350px;
+        text-wrap: balance;
+    }
+
+    .services__card-icon{
+        width: 48px;
     }
 
     .services__map{
@@ -378,11 +423,21 @@
     }
 
     .hero__header{
-        max-width: 576px;
+        max-width: 500px;
     }
+
+
     .services__grid{
         display: flex;
         flex-direction: column;
+    }
+
+    .services__info{
+        max-width: 100%;
+    }
+
+    .services__info-text{
+        max-width: 800px;
     }
 
     .services__card{
@@ -424,7 +479,7 @@
     
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
 
     .hero__info{
         padding: 0 16px;

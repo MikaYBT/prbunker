@@ -1,8 +1,8 @@
-menuButton = document.querySelector('.navigation__menu-button');
-collapseMenu = document.querySelector('.collapse-menu');
-closeButton = document.querySelector('.collapse-menu__close-button');
-collapseMenuOverlay = document.querySelector('.collapse-menu__overlay');
-collapseMenuLinks = document.querySelectorAll('.collapse-menu__button');
+const menuButton = document.querySelector('.navigation__menu-button');
+const collapseMenu = document.querySelector('.collapse-menu');
+const closeButton = document.querySelector('.collapse-menu__close-button');
+const collapseMenuOverlay = document.querySelector('.collapse-menu__overlay');
+const collapseMenuLinks = document.querySelectorAll('.collapse-menu__button');
 
 
 menuButton.addEventListener('click', () => {

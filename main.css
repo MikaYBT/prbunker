@@ -10,9 +10,9 @@
     text-align: center;
     color: white;
     gap: 0;
-    background: linear-gradient(0deg, #0F52BA00 20%, #0F52BA 60%);
+    background: #0F52BA;
     padding: 128px 0 0 0;
-    margin: 0 0 256px 0;
+    margin: 0;
     overflow: hidden;
 }
 
@@ -33,24 +33,23 @@
     margin: 0 0 16px 0;
 }
 
-/* .hero__video{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    z-index: -1;
-} */
-
 .hero__video{
     position: absolute;
     width: 101%;
     bottom: 0;
-    z-index: -1;
+    z-index: -2;
     object-fit: cover;
     left: 50%;
     transform: translate(-50%, 0);
+    height: 100%;
+}
+
+
+@media screen and (max-height: 800px){
+    .hero__video{
+        height: 60%;
+    }
+    
 }
 
 /* Services */
@@ -104,6 +103,7 @@
 }
 
 .services__card{
+    position: relative;
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -112,30 +112,53 @@
     height: 560px;
     padding: 32px;
     align-items: flex-start;
-    gap: 32px;
+    gap: 24px;
     align-self: stretch;
     border-radius: 16px;
     background: var(--sapphire);
+    overflow: hidden;
 }
 
 .services__card-header{
     max-width: 350px;
+    z-index: 1;
 }
 
 .services__card-text{
     max-width: 400px;
+    z-index: 1;
 }
 
 .services__card--ship{
-    background: linear-gradient(90deg, #0F52BA 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/ship.jpg) lightgray 50% / cover no-repeat;
+    background: linear-gradient(90deg, #0f53ba88 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/ship.jpg) lightgray 50% / cover no-repeat;
 }
 
 .services__card--train{
-    background: linear-gradient(90deg, #0F52BA 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/train.jpg) lightgray 50% / cover no-repeat;
+    background: linear-gradient(90deg, #0f53ba88 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/train.jpg) lightgray 50% / cover no-repeat;
 }
 
 .services__card--truck{
-    background: linear-gradient(90deg, #0F52BA 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/truck.jpg) lightgray 50% / cover no-repeat;
+    background: linear-gradient(90deg, #0f53ba88 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/truck.jpg) lightgray 50% / cover no-repeat;
+}
+
+.services__card-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    background: var(--white30);
+    opacity: 1;
+}
+
+.services__card-ellipses{
+    position: absolute;
+    bottom: -600px;
+    right: -300px;
+    width: 2000px;
+    transform: rotate(30deg);
+    opacity: 1;
 }
 
 .services__advantages{
@@ -293,11 +316,9 @@
 
 
 @media screen and (max-width: 1024px) {
-    .hero{
-        background: linear-gradient(0deg, #0F52BA00 0%, #0F52BA 40%);
-    }
+
     .hero__info{
-        padding: 32px;
+        padding: 0 32px;
     }
     .hero__header{
         max-width: 730px;
@@ -363,9 +384,33 @@
         display: flex;
         flex-direction: column;
     }
+
+    .services__card{
+        height: 480px;
+        gap: 16px;
+    }
+
+    .services__card--ship{
+    background: linear-gradient(180deg, #0f53ba88 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/ship.jpg) lightgray 50% / cover no-repeat;
+    }
+
+    .services__card--train{
+    background: linear-gradient(180deg, #0f53ba88 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/train.jpg) lightgray 50% / cover no-repeat;
+    }
+
+.services__card--truck{
+    background: linear-gradient(180deg, #0f53ba88 0%, rgba(15, 82, 186, 0.00) 100%), url(images/photos/truck.jpg) lightgray 50% / cover no-repeat;
+    }
+
+    .services__card-ellipses{
+        width: 1500px;
+        bottom: -500px;
+    }
+
+
     .services__info{
         top: 0;
-        padding: 96px 0 32px 0;
+        padding: 72px 0 32px 0;
     }
     .hero__video{
         width: 250%;
@@ -380,11 +425,9 @@
 }
 
 @media screen and (max-width: 425px) {
-    .hero{
-        background: linear-gradient(0deg, #0F52BA00 0%, #0F52BA 30%);
-    }
+
     .hero__info{
-        padding: 16px;
+        padding: 0 16px;
     }
     .services{
         padding: 0px 16px 64px 16px;

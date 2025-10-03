@@ -23,7 +23,7 @@
                     <li><a href="#contacts" class="btn btn--dark">Контакты</a></li>
                 </ul>
                 <div class="navigation__side-menu">
-                    <a href="#" class="navigation__cta cta btn btn--sapphire">Консультация</a>
+                    <a href="#" class="navigation__cta cta btn btn--sapphire">Бесплатная консультация</a>
                     <img src="images/icons/menu.svg" alt="" class="navigation__menu-button">
                 </div>
             </div>
@@ -53,6 +53,7 @@
                     <input type="submit" class="btn btn--sapphire">
                 </form>
             </div>
+            <div class="modal-form__overlay"></div>
 
         </nav>
         <main>
@@ -78,16 +79,22 @@
                             <p class="services__card-text text">Доставка судном-бункеровщиком или автотранспортом на
                                 судно получателя, а также выдача нефтепродуктов из танков судна-накопителя на судно
                                 покупателя</p>
+                            <div class="services__card-overlay"></div>
+                            <img src="images/2d/ellipses2.svg" alt="" class="services__card-ellipses">
                         </div>
                         <div class="services__card services__card--train">
                             <h3 class="services__card-header">Поставка железнодорожным транспортом</h3>
                             <p class="services__card-text text">Доставка до станции назначения или передача перевозчику
                                 на станции отгрузки </p>
+                            <div class="services__card-overlay"></div>
+                            <img src="images/2d/ellipses1.svg" alt="" class="services__card-ellipses">
                         </div>
                         <div class="services__card services__card--truck">
                             <h3 class="services__card-header">Поставка автотранспортом</h3>
                             <p class="services__card-text text">Доставка до пункта разгрузки или передача на условиях
                                 самовывоза </p>
+                            <div class="services__card-overlay"></div>
+                            <img src="images/2d/ellipses3.svg" alt="" class="services__card-ellipses">
                         </div>
                     </div>
                 </div>
@@ -180,36 +187,37 @@
                     <div class="footer__hr"></div>
                     <div class="footer__contact">
                         <div class="footer__contact-info">
-                        <div class="footer__contact-text">
-                            <p class="text">ООО «Приморский бункер»</p>
-                            <p class="text">ИНН: 7813351752</p>
-                            <p class="text">ОГРН: 5067847138992</p>
-                        </div>
-                        <div class="footer__contact-text">
-                            <div class="footer__contact-header">
-                                <img src="images/icons/phone.svg" alt="" class="footer__icon">
-                                <p class="text" style="font-weight: 700;">Телефон</p>
+                            <div class="footer__contact-text">
+                                <p class="text">ООО «Приморский бункер»</p>
+                                <p class="text">ИНН: 7813351752</p>
+                                <p class="text">ОГРН: 5067847138992</p>
                             </div>
-                            <p class="text text--big">+7 (812) 309 83 76</p>
-                        </div>
-                        <div class="footer__contact-text">
-                            <div class="footer__contact-header">
-                                <img src="images/icons/mail.svg" alt="" class="footer__icon">
-                                <p class="text" style="font-weight: 700;">Почта</p>
+                            <div class="footer__contact-text">
+                                <div class="footer__contact-header">
+                                    <img src="images/icons/phone.svg" alt="" class="footer__icon">
+                                    <p class="text" style="font-weight: 700;">Телефон</p>
+                                </div>
+                                <p class="text text--big">+7 (812) 309 83 76</p>
                             </div>
-                            <p class="text text--big">info@prbunker.ru</p>
-                        </div>
-                    </div>
-                    <div class="footer__adress">
-                        <div class="footer__contact-text">
-                            <div class="footer__contact-header">
-                                <img src="images/icons/point.svg" alt="" class="footer__icon">
-                                <p class="text" style="font-weight: 700;">Адрес</p>
+                            <div class="footer__contact-text">
+                                <div class="footer__contact-header">
+                                    <img src="images/icons/mail.svg" alt="" class="footer__icon">
+                                    <p class="text" style="font-weight: 700;">Почта</p>
+                                </div>
+                                <p class="text text--big">info@prbunker.ru</p>
                             </div>
-                                <p class="text">Санкт-Петербург, Россия, 197022, проспект Медиков, дом 5, литер В, помещение № 7-Н, комнаты 149-151</p>
+                        </div>
+                        <div class="footer__adress">
+                            <div class="footer__contact-text">
+                                <div class="footer__contact-header">
+                                    <img src="images/icons/point.svg" alt="" class="footer__icon">
+                                    <p class="text" style="font-weight: 700;">Адрес</p>
+                                </div>
+                                <p class="text">Санкт-Петербург, Россия, 197022, проспект Медиков, дом 5, литер
+                                    В, помещение № 7-Н, комнаты 149-151</p>
                                 <img src="images/2d/map.png" alt="" class="footer__map">
-                        </div>            
-                    </div>
+                            </div>
+                        </div>
                     </div>
                     <ul class="footer__list footer__list--contact">
                         <li><a href="" class="btn btn--white">Политика конфденциальности</a></li>
@@ -224,7 +232,7 @@
                         <li><a href="" class="btn btn--white">Согласие</a></li>
                         <li><a href="" class="btn btn--white">Реквизиты</a></li>
                         <li><a href="" class="btn btn--white">Разработка сайта</a></li>
-                    </ul> 
+                    </ul>
                     <img src="images/logos/Приморский бункер white20.svg" alt="" class="footer__image">
                 </div>
             </div>
@@ -232,6 +240,7 @@
     </div>
     <script src="scripts/menu.js"></script>
     <script src="scripts/form.js"></script>
+    <script src="scripts/animations.js"></script>
 </body>
 
 </html>

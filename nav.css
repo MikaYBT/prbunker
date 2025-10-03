@@ -5,7 +5,7 @@
     display: flex;
     box-sizing: border-box;
     width: 100%;
-    height: 64px;
+    height: 72px;
     justify-content: space-between;
     align-items: center;
     padding: 0px 64px;
@@ -48,16 +48,16 @@
     position: fixed;
     top: 0px;
     right: 0px;
-    width: 300px;
+    width: 200px;
     height: 100vh;
     background-color: var(--white);
     z-index: 10;
-    padding: 32px 16px;
+    padding: 64px 16px;
     transform: translateX(100%);
     transition: transform 0.3s;
     display: flex;
     flex-direction: column;
-    gap: 64px;
+    gap: 48px;
     align-items: flex-start;
 }
 
@@ -105,25 +105,33 @@
 }
 
 .modal-form{
-    display: none;
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
     width: 720px;
-    height: 530px;
+    height: 562px;
     padding: 32px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
     background-color: var(--white);
-    z-index: 8;
-    border-radius: 32px;
-}
-
-.modal-form--active{
-    display: flex;
-    position: fixed;
+    z-index: 10;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.1s;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.modal-form--active{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .modal-form__close-button{
@@ -144,12 +152,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
     width: fit-content;
 }
 
 .modal-form__checkbox{
     display: flex;
+    gap: 16px;
+}
+
+.modal-form__overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s;
+}
+
+.modal-form__overlay--active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media screen and (max-width: 1440px) {
+    .navigation__list{
+        gap: 32px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -167,12 +200,26 @@
     .navigation__menu-button{
         display: block;
     }
+
+    .modal-form{
+        width: 402px;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .navigation{
+        height: 64px;
+    }
+
     .navigation__side-menu{
         gap: 16px;
     }
+
+    
+    .navigation__cta{
+        display: none;
+    }
+    
 }
 
 @media screen and (max-width: 425px) {
@@ -180,9 +227,19 @@
         padding: 0px 16px;
     }
 
-
-    .navigation__cta{
-        display: none;
+    .collapse-menu__close-button{
+        top: 20px;
+        right: 20px;
     }
-    
+
+    .modal-form{
+        width: 100%;
+        height: 800px;
+    }
+
+    .modal-form__overlay{
+        background-color: var(--white);
+    }
+
+
 }

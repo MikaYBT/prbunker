@@ -16,7 +16,7 @@ const servicesGridHeader = document.querySelector(".services__info")
 const servicesOverlay = document.querySelectorAll(".services__card-overlay");
 const servicesEllipses = document.querySelectorAll(".services__card-ellipses");
 
-function servicesOverlayAnimation(){
+function servicesAnimations(){
     const windowHeight = window.innerHeight;
     servicesOverlay.forEach(card => {
         const position = card.getBoundingClientRect();
@@ -31,10 +31,18 @@ function servicesOverlayAnimation(){
         ellipse.style.transform = `rotate(${rotation}deg)`
     })
     gridPosition = servicesGridHeader.getBoundingClientRect();
-    gridDif = Math.abs((gridPosition.top + gridPosition.height / 2) - windowHeight/2)
-    gridOpacity = 1 - ((gridDif/ (windowHeight/2)))**3 + 0.1;
+    if (window.innerWidth > 768){
+        const gridDif = Math.abs((gridPosition.top + gridPosition.height / 2) - windowHeight/2)
+        gridOpacity = 1 - ((gridDif/ (windowHeight/2)))**3 + 0.1;
+    }
+    else{
+        const gridDif = Math.abs(0 - Math.abs((gridPosition.top))) 
+        gridOpacity = 1 - ((gridDif / windowHeight))**2 + 0.1;
+    }
+    
     serivcesGrid.style.opacity = Math.max(0, Math.min(1, gridOpacity));
 
 }
 
-window.addEventListener('scroll', servicesOverlayAnimation);
+window.addEventListener('scroll', servicesAnimations);
+window.addEventListener('resize', servicesAnimations)

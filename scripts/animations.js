@@ -94,3 +94,41 @@ function advantagesAnimations(){
 
 window.addEventListener('scroll', advantagesAnimations);
 window.addEventListener('resize', advantagesAnimations);
+
+//about us
+
+const aboutUs = document.querySelector('.about-us__story')
+const aboutUsLogo = document.querySelector('.about-us__logo')
+const aboutUsCarousel = document.querySelector('.about-us__carousel')
+
+function aboutUsAnimations(){
+    const windowHeight = window.innerHeight;
+    storyPosition = aboutUs.getBoundingClientRect();
+    storyDif = (storyPosition.top + storyPosition.height / 2 ) - windowHeight/2
+    storyOpacity = 1 - (Math.abs(storyDif) / windowHeight / 2)*2 + 0.1;
+    aboutUs.style.opacity = Math.max(0, Math.min(1, storyOpacity));
+    logoTransform = storyDif / windowHeight / 2
+    aboutUsLogo.style.transform = `translate(0, ${0 - 250*logoTransform}%)`
+
+    carouselPosition = aboutUsCarousel.getBoundingClientRect();
+    carouselDif = Math.abs((carouselPosition.top + carouselPosition.height / 2) - windowHeight/2)
+    carouselOpacity = 1 - (carouselDif / windowHeight/2)
+    aboutUsCarousel.style.opacity = Math.max(0, Math.min(1, carouselOpacity))
+    
+}
+
+window.addEventListener('scroll', aboutUsAnimations);
+
+//footer
+
+const footer = document.querySelector(".footer__wrapper")
+
+function footerAnimations(){
+    const windowHeight = window.innerHeight
+    footerPosition = footer.getBoundingClientRect();
+    footerDif = (footerPosition.top + footerPosition.height/2) - windowHeight / 2
+    footerClip = (Math.abs(footerDif) / windowHeight/2)
+    footer.style.clipPath = `inset(${300*footerClip}px 0 0 0)` 
+}
+
+window.addEventListener('scroll', footerAnimations)

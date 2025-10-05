@@ -2,9 +2,9 @@
     background-color: var(--sapphire);
     display: flex;
     flex-direction: column;
-    padding: 64px;
+    padding: 256px 64px 64px 64px;
     color: var(--white);
-    gap: 64px;
+    gap: 96px;
 }
 
 .footer__menu{
@@ -12,7 +12,6 @@
     height: auto;
     row-gap: 32px;
     column-gap: 32px;
-    align-self: stretch;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 4fr 1fr 1fr 3fr 3fr
 }
@@ -80,14 +79,17 @@
 .footer__adress{
     display: flex;
     flex: 1;
+    flex-direction: column;
+    gap: 32px;
+    max-height: 100%;
 }
 
 .footer__map{
+    background-image: url(images/2d/map.png);
     object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    margin: 32px 0 0 0;
 }
 
 .footer__list{
@@ -106,8 +108,31 @@
 }
 
 .footer__image{
-    object-fit: contain;
+    position: relative;
     width: 100%;
+    height: fit-content;
+    background: var(--sapphire);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__image > img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.footer__image > video{
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 1440px) {
@@ -121,7 +146,7 @@
 @media screen and (max-width: 1024px) {
 
     .footer__wrapper{
-        padding: 32px;
+        padding: 128px 32px 32px 32px;
     }
 
     .footer__menu{
@@ -131,6 +156,7 @@
 
     .footer__form{
         grid-column: 1;
+        grid-row: 1;
     }
 
     .footer__hr{
@@ -201,7 +227,7 @@
 @media screen and (max-width: 480px) {
 
     .footer__wrapper{
-        padding: 16px;
+        padding: 128px 16px 16px 16px;
     }
   
     

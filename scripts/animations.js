@@ -132,3 +132,34 @@ function footerAnimations(){
 }
 
 window.addEventListener('scroll', footerAnimations)
+
+// const animationFade = document.querySelectorAll(".animation--fade");
+
+// function animationFade(){
+//     animationFade.forEach(object => {
+//         objectRect = object.getBoundingClientRect();
+//         objectDif = (objectRect.top + objectRect.height/2) - window.innerHeight / 2;
+//         objectOpacity = 1 - (objectDif / window.innerHeight / 2);
+//         object.style.opacity = Math.max(0, Math.min(1, objectOpacity))
+//     });
+// };
+
+const animationFade = new IntersectionObserver ((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting){
+            return;
+        } else {
+            objectRect = object.getBoundingClientRect();
+            objectDif = (objectRect.top + objectRect.height/2) - window.innerHeight / 2;
+            objectOpacity = 1 - (objectDif / window.innerHeight / 2);
+            object.style.opacity = Math.max(0, Math.min(1, objectOpacity));
+        }
+    });
+});
+
+const animationFadeObjects = document.querySelectorAll(".animation--fade");
+
+animationFadeObjects.forEach((object) => {
+    animationFade.observe(object);
+})
+

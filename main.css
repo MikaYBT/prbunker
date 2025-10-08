@@ -50,16 +50,25 @@
     bottom: 0;
     object-fit: contain;
     height: 40%;
-    width: 100%;
+    width: fit-content;
     left: 50%;
     transform: translate(-50%, 0);
     display: flex;
     justify-content: center;
 }
 
+.hero__video--cover{
+    width: 100%;
+}
+
 .hero__video > video{
     object-fit: contain;
     max-height: 100%;
+}
+
+.hero__video--cover > video{
+    object-fit: cover;
+    width: 100%;
 }
 
 .hero__gradient{

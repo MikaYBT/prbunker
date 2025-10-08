@@ -105,8 +105,8 @@
 }
 
 .modal-form{
+    position: fixed;
     display: flex;
-    position: absolute;
     box-sizing: border-box;
     width: 720px;
     height: 562px;

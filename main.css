@@ -11,7 +11,7 @@
     color: white;
     gap: 0;
     background: #0F52BA;
-    padding: 128px 0 0 0;
+    padding: 20vh 0 0 0;
     margin: 0;
     overflow: hidden;
     clip-path: inset(0px);
@@ -31,7 +31,7 @@
 
 .hero__text{
     max-width: 850px;
-    margin: 0 0 16px 0;
+    margin: 0 0 5vh 0;
 }
 
 .hero__bg{
@@ -114,17 +114,14 @@
     display: flex;
     flex-direction: column;
     gap: 128px;
-    scroll-margin-top: 64px
+    scroll-margin-top: 128px
 
 }
 
 .services__grid{
-    display: grid;
+    display: flex;
     width: 100%;
-    row-gap: 64px;
-    column-gap: 32px;
-    grid-template-rows: auto;
-    grid-template-columns: 2fr 3fr;
+    gap: 128px;
     color: var(--black);
     
 }
@@ -136,14 +133,13 @@
     align-items: start;
     flex-direction: column;
     gap: 24px;
-    grid-column: 1;
-    grid-row: 1;
     z-index: 2;
     height: min-content;
     align-self: start;
     top: 35vh;      
     background-color: var(--white);    
-    max-width: 600px;
+    min-width: 400px;
+    width: min-content;
 }
 
 .services__info-text{
@@ -154,8 +150,7 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    grid-column: 2;
-    grid-row: 1;
+    width: 100%;
 }
 
 .services__card{
@@ -165,7 +160,7 @@
     flex-direction: column;
     box-sizing: border-box;
     width: 100%;
-    height: 560px;
+    height: 80vh;
     padding: 32px;
     align-items: flex-start;
     gap: 24px;
@@ -222,7 +217,7 @@
 .services__card-ellipses{
     position: absolute;
     bottom: -600px;
-    right: -300px;
+    right: -350px;
     width: 2000px;
     transform: rotate(30deg);
     opacity: 1;
@@ -487,12 +482,10 @@
     }
 
     .services__grid{
-        grid-template-columns: 1fr 1fr;
+        gap: 64px;
     }
 
-    .services__info{
-        max-width: 500px;
-    }
+
 
     .services__card-header{
         gap: 16px;
@@ -511,11 +504,11 @@
         padding: 0 32px;
     }
     .hero__header{
-        max-width: 700px;
+        max-width: 725px;
     }
 
     .hero__text{
-        max-width: 500px;
+        max-width: 800px;
     }
 
     .hero__bg{
@@ -527,12 +520,13 @@
     }
 
     .services__grid{
-        grid-template-columns: 1fr 1fr;
+        gap: 64px;
     }
 
     .services__info{
-        max-width: 400px;
+        min-width: 300px;
     }
+
 
     .services__info-text{
         max-width: 350px;
@@ -597,6 +591,10 @@
     }
 
     .hero__header{
+        max-width: 550px;
+    }
+
+    .hero__text{
         max-width: 500px;
     }
 
@@ -607,7 +605,7 @@
     }
 
     .services__info{
-        max-width: 100%;
+        min-width: 100%;
     }
 
     .services__info-text{
@@ -615,7 +613,7 @@
     }
 
     .services__card{
-        height: 480px;
+        height: 50vh;
         gap: 16px;
     }
 

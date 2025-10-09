@@ -5,6 +5,7 @@
     padding: 256px 64px 64px 64px;
     color: var(--white);
     gap: 96px;
+    scroll-margin-top: -128px
 }
 
 .footer__menu{

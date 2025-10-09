@@ -41,9 +41,9 @@ body {
 
 h1{
     font-family: 'GolosTextWebVF', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 64px;
-    line-height: 120%;
+    line-height: 110%;
 }
 
 h2{
@@ -68,11 +68,11 @@ h3{
 }
 
 .text--big{
-	font-size: 28px;
+	font-size: 24px;
 }
 
 .text--small{
-	font-size: 16px;
+	font-size: 14px;
 }
 
 a{
@@ -85,7 +85,7 @@ a{
 .btn{
 	text-decoration: none;
 	font-weight: 500;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 120%;
 }
 
@@ -103,7 +103,7 @@ a{
 	background-color: var(--sapphire);
 	border-radius: 8px;
 	display: flex;
-	padding: 18px 36px;
+	padding: 16px 32px;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
@@ -122,7 +122,7 @@ a{
 	border: var(--white30) 1px solid;
 	border-radius: 8px;
 	display: flex;
-	padding: 18px 36px;
+	padding: 16px 32px;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
@@ -146,7 +146,8 @@ a{
 input[type="text"]{
 	box-sizing: border-box;
 	display: flex;
-	padding: 18.5px 24px;
+	padding: 16px 32px;
+	font-size: 16px;
 	align-items: center;
 	gap: 10px;
 	border-radius: 8px;
@@ -180,6 +181,7 @@ input[type="checkbox"]{
 	h3{
 		font-size: 32px;
 	}
+	
 }
 @media screen and (max-width: 1024px) {
 	h1 {

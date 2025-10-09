@@ -1,4 +1,3 @@
-
 //Fade on scroll
 
 const animationFadeOnScrollArray = document.querySelectorAll(".animation__scroll--fade");

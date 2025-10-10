@@ -29,6 +29,7 @@ function animationFadeOnScroll() {
 };
 
 window.addEventListener('scroll', animationFadeOnScroll);
+window.addEventListener("resize", animationFadeOnScroll);
 
 const animationFadeInverseOnScrollArray = document.querySelectorAll(".animation__scroll--fade-inverse");
 
@@ -52,6 +53,7 @@ function animationFadeInverseOnScroll() {
 };
 
 window.addEventListener('scroll', animationFadeInverseOnScroll);
+window.addEventListener("resize", animationFadeInverseOnScroll);
 
 //Clip path on scroll
 
@@ -60,7 +62,7 @@ const animationClipBottomOnScrollArray = document.querySelectorAll(".animation__
 function animationClipBottomOnScroll() {
     animationClipBottomOnScrollArray.forEach(object => {
         objectRect = object.getBoundingClientRect();
-        if (objectRect.bottom > -100 && objectRect.top < window.innerHeight + 100) {
+        if (objectRect.bottom > -100) {
             objectDif = (objectRect.top + objectRect.height / 2) - window.innerHeight / 2;
             objectRatio = Math.max(1, Math.min(1.5, objectRect.height * objectRect.width / (window.innerHeight * window.innerWidth)));
             objectClip = (objectDif / window.innerHeight / 2);
@@ -72,6 +74,7 @@ function animationClipBottomOnScroll() {
 }
 
 window.addEventListener('scroll', animationClipBottomOnScroll);
+window.addEventListener("resize", animationClipBottomOnScroll);
 
 const animationClipTopOnScrollArray = document.querySelectorAll(".animation__scroll--clip-top");
 
@@ -88,6 +91,7 @@ function animationClipTopOnScroll() {
 }
 
 window.addEventListener('scroll', animationClipTopOnScroll);
+window.addEventListener("resize", animationClipTopOnScroll);
 
 //rotation on scroll
 
@@ -107,6 +111,7 @@ function animationRotateOnScroll() {
 }
 
 window.addEventListener('scroll', animationRotateOnScroll);
+window.addEventListener("resize", animationRotateOnScroll);
 
 //move on scroll
 
@@ -119,22 +124,15 @@ function animationMoveYOnScroll() {
         if (objectRect.bottom > -100 && objectRect.top < window.innerHeight + 100) {
             objectDif = ((objectRect.top + objectRect.height / 2) - window.innerHeight / 2);
             objectRatio = Math.max(1, Math.min(1.5, objectRect.height * objectRect.width / (window.innerHeight * window.innerWidth)));
-            objectTransform = 1 - (objectDif / window.innerHeight / 2);
-            if (window.innerWidth > 1024) {
-                object.style.transform = `translate(0%, ${-50 * objectTransform + 40}%)`
-            }
-            else if (window.innerWidth > 768) {
-                object.style.transform = `translate(0%, ${-50 * objectTransform}%)`
-            } else {
-                object.style.transform = `translate(0%, ${-50 * objectTransform + 50}%)`
-            }
-            
+            objectTransform = 1 - (objectDif / (window.innerHeight / 2));
+            object.style.transform = `translate(0%, ${-10 * objectTransform}%)`
         }
     });
 
 }
 
 window.addEventListener('scroll', animationMoveYOnScroll);
+window.addEventListener("resize", animationMoveYOnScroll);
 
 
 const animationMoveYInverseOnScrollArray = document.querySelectorAll('.animation__scroll-move-y-inverse');
@@ -144,14 +142,39 @@ function animationMoveYInverseOnScroll() {
     animationMoveYInverseOnScrollArray.forEach((object) => {
         objectRect = object.getBoundingClientRect();
         if (objectRect.bottom > -100 && objectRect.top < window.innerHeight + 100) {
-            objectDif = ((objectRect.top + objectRect.height / 2) - window.innerHeight / 2);
-            objectRatio = Math.max(1, Math.min(1.5, objectRect.height * objectRect.width / (window.innerHeight * window.innerWidth)));
-            objectTransform = (objectDif / window.innerHeight / 2);
-            object.style.transform = `translate(0%, ${-250 * objectTransform}%)`
+            objectDif = ((objectRect.top + (objectRect.height / 2)) - (window.innerHeight / 2));
+            objectTransform = (objectDif / (window.innerHeight / 2));
+            object.style.transform = `translate(0%, ${-50 * objectTransform}%)`
             
         }
     });
 
 }
 
+window.addEventListener('DOMContentLoaded', animationMoveYInverseOnScroll);
 window.addEventListener('scroll', animationMoveYInverseOnScroll);
+window.addEventListener("resize", animationMoveYInverseOnScroll);
+
+
+//map
+
+const mapGradient = document.querySelector('.advantages__map-gradient');
+const mapTrackers = document.querySelectorAll('.advantages__tracking');
+
+function mapAnimation() {
+    mapGradientRect = mapGradient.getBoundingClientRect();
+    mapTrackers.forEach(tracker => {
+        trackerRect = tracker.getBoundingClientRect();
+        if (
+            mapGradientRect.x > (trackerRect.x - window.innerWidth*0.20) &&
+            mapGradientRect.x < (trackerRect.x + window.innerWidth*0.05)
+        ) {
+            tracker.style.transform = "scale(1.2, 1.2)";
+        } else {
+            tracker.style.transform = "scale(1, 1)";
+        }
+    });
+    requestAnimationFrame(mapAnimation);
+}
+
+mapAnimation();

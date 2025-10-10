@@ -183,6 +183,9 @@
     .navigation__list{
         gap: 48px;
     }
+    .navigation{
+        padding: 0px 32px;
+    }
 }
 
 @media screen and (max-width: 1024px) {

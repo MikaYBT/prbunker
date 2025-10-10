@@ -237,8 +237,8 @@
     display: flex;
     box-sizing: border-box;
     max-height: 800px;
-    height: 80vh;
-    padding: 32px;
+    height: 736px;
+    padding: 48px;
     flex-direction: column;
     align-items: center;
     gap: 16px;
@@ -249,16 +249,22 @@
     clip-path: padding-box;
 }
 
+.advantages__map-header{
+
+    z-index: 2;
+    width: 800px;
+}
+
 .advantages__map-text{
-    max-width: 400px;
-    z-index: 1;
+    width: 1000px;
+    z-index: 2;
 }
 
 .advantages__map-image-wrapper{
     position: absolute;
     bottom: 0;
     width: 95%;
-    height: 45vw;
+    height: 40vw;
     object-fit: contain;
 }
 
@@ -273,6 +279,29 @@
 
 }
 
+@keyframes tracking-size {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    25% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+
+    75% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+    
+}
+
 .advantages__tracking{
     position: absolute;
     display: flex;
@@ -283,10 +312,12 @@
     gap: 8px;
     background-color: var(--white);
     border-radius: 8px 8px 8px 0;
+    z-index: 3;
+    transition: transform 0.5s;
 }
 
 .advantages__tracking--ship{
-    bottom: 52%;
+    bottom: 56%;
     left: 16%;
 }
 
@@ -312,6 +343,10 @@
     color: var(--white30);
 }
 
+.advantages__tracking-text > p{
+    font-size: 18px;
+}
+
 .advantages__tracking-animation{
     position: relative;
     display: flex;
@@ -319,7 +354,34 @@
 }
 
 .advantages__tracking-icon{
-    height: 24px;
+    height: 40px;
+}
+
+@keyframes map-gradient {
+    0% {
+        transform: translateX(-500%);
+    }
+
+    25% {
+        transform: translateX(-500%);
+    }
+    75% {
+        transform: translateX(500%);
+    }
+
+    100%{
+        transform: translateX(500%);
+    }
+}
+
+.advantages__map-gradient{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 20%;
+    height: 110%;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+    animation: map-gradient 6s linear infinite;
 }
 
 @keyframes tracking-animation {
@@ -380,14 +442,11 @@
     height: 576px;
     padding: 32px;
     flex-direction: column;
-
-    align-items: center;
     background: rgba(111, 151, 214, 0.50);
     backdrop-filter: blur(8px);
     border: var(--white70) 1px solid;
     border-radius: 16px;
     justify-content: space-between;
-    overflow: hidden;
     z-index: 1;
 }
 
@@ -397,29 +456,29 @@
     gap: 16px;
     padding: 0 0 32px 0;
     z-index: 1;
-    max-width: 500px;
+    max-width: 300px;
     
 }
 
 .advantages__image{
     position: absolute;
-    bottom: 16px;
-    width: 100%; 
-    height: 60%; 
+    bottom: -50px;
+    width: 85%; 
+    height: 70%; 
     object-fit: contain;
     z-index: 1;
-    
 }
 
 .about-us{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 128px 0 0 0;
-    gap: 96px;
+    padding: 64px 0 0 0;
+    gap: 64px;
 }
 
 .about-us__story{
+    position: relative;
     padding: 0 64px;
     display: grid;
     height: auto;
@@ -434,11 +493,9 @@
     grid-row: 1;
     grid-column: 1;
     width: 100%;
-    position: sticky;
     z-index: -2;
     height: min-content;
     align-self: start;
-    top: 35vh;      
     background-color: var(--white);
 }
 
@@ -449,6 +506,7 @@
     grid-row: 1;
     grid-column: 2;
     max-width: 900px;
+    justify-content: center;
 }
 
 @keyframes scroll-image {
@@ -460,6 +518,14 @@
     display: flex;  
     max-width: 100%;
     overflow: hidden;
+}
+.about-us__header{
+    margin: 0 0 16px 0;
+}
+
+.about-us__text{
+    
+    max-width: 800px;
 }
 
 .about-us__carousel-scroll-part{
@@ -477,11 +543,16 @@
 
 @media screen and (max-width: 1440px) {
     
+
     .hero__bg{
         width: 150%;
     }
     .hero__header{
         width: 850px;
+    }
+
+    .services{
+        padding: 0px 32px 64px 32px;
     }
 
     .services__info{
@@ -503,13 +574,56 @@
 
     .services__card-header{
         gap: 16px;
-        width: 350px;
+        width: 300px;
     }
 
 
     .services__card-text{
         width: 300px;
     }
+
+    .advantages__map{
+        height: 576px;
+    }
+
+    .advantages__tracking--ship{
+        bottom: 57%;
+    }
+
+    .advantages__tracking-icon{
+        height: 24px;
+    }
+
+    .advantages__tracking-text > p{
+        font-size: 14px;
+    }
+    
+
+    .advantages__card{
+        padding: 24px;
+        height: 480px;
+    }
+
+    .advantages__card-info{
+        width: 270px;
+    }
+
+    .advantages__card-info > h3{
+        max-width: 250px;
+    }
+
+
+    .advantages__image{
+        width: 80%;
+    }
+
+    .about-us__story{
+        padding: 0 32px;
+    }
+        .about-us__text{
+        max-width: 530px;
+    }
+
 
 }
 
@@ -571,11 +685,21 @@
         height: 512px;
     }
 
-    .advantages__tracking{
-        padding: 8px;
+    .advantages__map-header{
+        width: 300px;
     }
+
+    .advantages__map-text{
+        width: 280px;
+    }
+
+
     .advantages__tracking-icon{
         height: 16px;
+    }
+
+    .advantages__tracking--ship{
+        bottom: 60%;
     }
 
 
@@ -587,18 +711,14 @@
         flex-direction: row;
         height: 272px;
         padding: 32px;
+        overflow: visible;
     }
     
-    .advantages__card-info{
-        flex: 1;
-    }
-
     .advantages__image{
         right: 16px;
-        top: 50%;
-        transform: translate(0, -50%);
-        width: auto;
-        height: 80%;
+        width: 50%;
+        height: 120%;
+        bottom: -100px;
     }
     
 
@@ -676,27 +796,65 @@
         height: 480px;
     }
 
+    .advantages__map-image{
+        width: 110%;
+        height: 110%;
+    }
+
     .advantages__map-image-wrapper{
         bottom: 10%;
     }
 
-    .advantages__card{
-        flex-direction: column;
-        height: 416px;
+    .advantages__tracking{
+        padding: 8px;
+    }
+
+    .advantages__tracking-corner{
+        height: 32px;
+        bottom: -32px;
+    }
+
+    .advantages__tracking--truck{
+        right: 6%;
+        bottom: 30%;
+    }
+
+    .advantages__tracking--train{
+        bottom: 25%;
+        left: 35%;
+    }
+
+    .advantages__tracking--ship{
+        bottom: 67%;
+        left: 12%;
+    }
+
+    .advantages__tracking-icon{
+        height: 12px;
+    }
+    
+.advantages__card-info{
+    width: 270px;
+}
+
+        .advantages__card{
+        height: 414px;
     }
 
     .advantages__image{
-        height: 50%;
-        width: 100%;
-        bottom: 32px;
-        top: auto;
-        right: auto;
+        height: 80%;
+        width: 90%;
+        bottom: -100px;
     }
+
+
 
 
     .about-us__story{
         grid-template-columns: 1fr 3fr;
+        column-gap: 0px;
     }
+    
 
 
     
@@ -719,7 +877,22 @@
         width: 400px;
     }
 
+    .services__header{
+        width: 300px;
+    }
 
+    .advantages__map{
+        height: 400px
+    }
+
+    .advantages__map-image{
+        width: 110%;
+        height: 110%;
+    }
+
+    .advantages__map-header{
+        width: 250px;
+    }
 
     .about-us{
         gap: 64px;
@@ -733,6 +906,25 @@
         width: 200px;
         margin: 8px;
     }
+
+    .advantages__tracking-text > p{
+        font-size: 12px;
+    }
+
+    .advantages__tracking-animation > img{
+        height: 8px;
+    }
+
+    .advantages__card{
+        height: 414px;
+    }
+
+    .advantages__image{
+        height: 80%;
+        width: 90%;
+        bottom: -100px;
+    }
+
 
 
 }
@@ -757,5 +949,27 @@
     }
     .services__info-text{
         width: 300px;
+    }
+
+    .advantages__map-header{
+        width: 200px;
+    }
+
+    .advantages__map-text{
+        width: 250px;
+        
+}
+
+    .advantages__card{
+        height: 360px;
+    }
+
+    .advantages__card-info{
+        width: 240px;
+    }
+
+    .advantages__image{
+        height: 70%;
+        bottom: -75px;
     }
 }

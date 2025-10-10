@@ -100,7 +100,7 @@ function animationRotateOnScroll() {
             objectDif = ((objectRect.top + objectRect.height / 2) - window.innerHeight / 2);
             objectRatio = Math.max(1, Math.min(1.5, objectRect.height * objectRect.width / (window.innerHeight * window.innerWidth)));
             objectRotation = 1 - (objectDif / window.innerHeight / 2);
-            object.style.transform = `rotate(${objectRotation * 45 + 15}deg)`
+            object.style.transform = `rotate(${objectRotation * 45 - 45}deg)`
         }
 
     })

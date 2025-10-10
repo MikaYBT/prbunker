@@ -50,25 +50,25 @@ h2{
 	font-family: 'GolosTextWebVF', sans-serif;
 	font-weight: 600;
 	font-size: 48px;
-	line-height: 120%;
+	line-height: 110%;
 }
 
 h3{
 	font-family: 'GolosTextWebVF', sans-serif;
 	font-weight: 500;
 	font-size: 36px;
-	line-height: 120%;
+	line-height: 110%;
 }
 
 .text{
 	font-family: 'GolosUIWebVF', sans-serif;
 	font-weight: 400;
-	font-size: 18px;
+	font-size: 20px;
 	line-height: 120%;
 }
 
 .text--big{
-	font-size: 24px;
+	font-size: 32px;
 }
 
 .text--small{
@@ -85,7 +85,7 @@ a{
 .btn{
 	text-decoration: none;
 	font-weight: 500;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 120%;
 }
 
@@ -181,6 +181,16 @@ input[type="checkbox"]{
 	h3{
 		font-size: 32px;
 	}
+	.btn{
+		font-size: 16px;
+	}
+	.text{
+		font-size: 18px;
+	}
+	.text--big{
+	font-size: 32px;
+}
+
 	
 }
 @media screen and (max-width: 1024px) {
@@ -194,7 +204,7 @@ input[type="checkbox"]{
 		font-size: 26px;
 	}
 	.text--big{
-		font-size: 22px;
+		font-size: 28px;
 	}
 }
 @media screen and (max-width: 768px) {
@@ -206,6 +216,9 @@ input[type="checkbox"]{
 	}
 	h3{
 		font-size: 26px;
+	}
+		.text--big{
+		font-size: 22px;
 	}
 }
 @media screen and (max-width: 480px) {

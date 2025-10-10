@@ -1,3 +1,10 @@
+/*
+* Soft.js v.0.0.1
+*
+* @author Mnogolika
+* @license MIT
+*/
+
 //Fade on scroll
 
 const animationFadeOnScrollArray = document.querySelectorAll(".animation__scroll--fade");
@@ -5,12 +12,18 @@ const animationFadeOnScrollArray = document.querySelectorAll(".animation__scroll
 function animationFadeOnScroll() {
     animationFadeOnScrollArray.forEach(object => {
         objectRect = object.getBoundingClientRect();
+        const fadePower = 3;
         if (objectRect.bottom > -100 && objectRect.top < window.innerHeight + 100) {
-            objectDif = Math.abs((objectRect.top + objectRect.height / 2) - window.innerHeight / 2) / (window.innerHeight / 2);
-            objectRatio = Math.max(1, objectRect.height * objectRect.width / (window.innerHeight * window.innerWidth));
-            objectOpacity = objectRatio*3 - objectDif*1.8 - (window.innerHeight/objectRect.height)/3
-            console.log(objectRatio)
-            object.style.opacity = objectOpacity 
+            objectDif = 0;
+            if (objectRect.bottom < (fadePower*100)){
+                objectDif = Math.abs((objectRect.bottom - (fadePower*100)) / (fadePower*100));
+                console.log(objectDif)
+            } else if (objectRect.top > window.innerHeight - (fadePower*100)){
+                objectDif = Math.abs((objectRect.top - (window.innerHeight-(fadePower*100))) / (window.innerHeight-(fadePower*100)));
+                console.log(objectDif)
+            }
+            objectOpacity = Math.max(0, Math.min(1, 1 - objectDif**(fadePower/2)));
+            object.style.opacity = objectOpacity;
         }
     });
 };
@@ -22,12 +35,18 @@ const animationFadeInverseOnScrollArray = document.querySelectorAll(".animation_
 function animationFadeInverseOnScroll() {
     animationFadeInverseOnScrollArray.forEach(object => {
         objectRect = object.getBoundingClientRect();
+        const fadePower = 4;
         if (objectRect.bottom > -100 && objectRect.top < window.innerHeight + 100) {
-            objectDif = Math.abs((objectRect.top + objectRect.height / 2) - window.innerHeight / 2)  / (window.innerHeight / 2);
-            objectRatio = Math.max(1, objectRect.height * objectRect.width / (window.innerHeight * window.innerWidth));
-            objectOpacity = objectDif/1.5
-            console.log(objectRatio)
-            object.style.opacity = objectOpacity 
+            objectDif = 0;
+            if (objectRect.bottom < (fadePower*100)){
+                objectDif = Math.abs((objectRect.bottom - (fadePower*100)) / (fadePower*100));
+                console.log(objectDif)
+            } else if (objectRect.top > window.innerHeight - (fadePower*100)){
+                objectDif = Math.abs((objectRect.top - (window.innerHeight-(fadePower*100))) / (window.innerHeight-(fadePower*100)));
+                console.log(objectDif)
+            }
+            objectOpacity = Math.max(0, Math.min(1, objectDif**(fadePower/2)));
+            object.style.opacity = objectOpacity;
         }
     });
 };
@@ -81,7 +100,7 @@ function animationRotateOnScroll() {
             objectDif = ((objectRect.top + objectRect.height / 2) - window.innerHeight / 2);
             objectRatio = Math.max(1, Math.min(1.5, objectRect.height * objectRect.width / (window.innerHeight * window.innerWidth)));
             objectRotation = 1 - (objectDif / window.innerHeight / 2);
-            object.style.transform = `rotate(${objectRotation * 45}deg)`
+            object.style.transform = `rotate(${objectRotation * 45 + 15}deg)`
         }
 
     })

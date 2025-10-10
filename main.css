@@ -247,6 +247,7 @@
     text-align: center;
     background: var(--white90);
     clip-path: padding-box;
+    overflow: hidden;
 }
 
 .advantages__map-header{

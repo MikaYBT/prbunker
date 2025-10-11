@@ -142,10 +142,10 @@ function animationMoveYInverseOnScroll() {
     animationMoveYInverseOnScrollArray.forEach((object) => {
         objectRect = object.getBoundingClientRect();
         if (objectRect.bottom > -100 && objectRect.top < window.innerHeight + 100) {
-            objectDif = ((objectRect.top + (objectRect.height / 2)) - (window.innerHeight / 2));
-            objectTransform = (objectDif / (window.innerHeight / 2));
-            object.style.transform = `translate(0%, ${-50 * objectTransform}%)`
-            
+            objectDif = ((objectRect.top + objectRect.height / 2) - window.innerHeight / 2);
+            objectRatio = Math.max(1, Math.min(1.5, objectRect.height * objectRect.width / (window.innerHeight * window.innerWidth)));
+            objectTransform = 1 - (objectDif / (window.innerHeight / 2));
+            object.style.transform = `translate(0%, ${50 * objectTransform}%)`
         }
     });
 

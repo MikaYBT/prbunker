@@ -56,7 +56,7 @@ h2{
 h3{
 	font-family: 'GolosTextWebVF', sans-serif;
 	font-weight: 500;
-	font-size: 36px;
+	font-size: 34px;
 	line-height: 110%;
 }
 
@@ -179,7 +179,7 @@ input[type="checkbox"]{
 		font-size: 40px;
 	}
 	h3{
-		font-size: 26px;
+		font-size: 24px;
 	}
 	.btn{
 		font-size: 16px;
@@ -203,7 +203,7 @@ input[type="checkbox"]{
 		font-size: 30px;
 	}
 	h3{
-		font-size: 26px;
+		font-size: 22px;
 	}
 	.text--big{
 		font-size: 28px;
@@ -231,7 +231,7 @@ input[type="checkbox"]{
 		font-size: 28px;
 	}
 	h3{
-		font-size: 26px;
+		font-size: 22px;
 	}
 	p{
 		font-size: 18px;

@@ -160,7 +160,7 @@
     flex-direction: column;
     box-sizing: border-box;
     width: 100%;
-    height: 70vh;
+    height: 512px;
     padding: 32px;
     align-items: flex-start;
     gap: 24px;
@@ -314,7 +314,7 @@
     background-color: var(--white);
     border-radius: 8px 8px 8px 0;
     z-index: 3;
-    transition: transform 0.5s;
+    transition: transform 0.5s ease-out;
 }
 
 .advantages__tracking--ship{
@@ -360,18 +360,18 @@
 
 @keyframes map-gradient {
     0% {
-        transform: translateX(-500%);
+        transform: translateX(-400%);
     }
 
     25% {
-        transform: translateX(-500%);
+        transform: translateX(-400%);
     }
     75% {
-        transform: translateX(500%);
+        transform: translateX(400%);
     }
 
     100%{
-        transform: translateX(500%);
+        transform: translateX(400%);
     }
 }
 
@@ -381,7 +381,7 @@
     z-index: 1;
     width: 20%;
     height: 110%;
-    background: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
     animation: map-gradient 6s linear infinite;
 }
 
@@ -391,18 +391,18 @@
         opacity: 1;
     }
 
-    50% {
-        opacity: 1;
-    }
 
-    100% {
-        transform: scale(1.5, 1.5);
+
+    99% {
+        transform: scale(5, 5);
         opacity: 0;
     }
 }
 
+
+
 .advantages__tracking-animation > img:nth-child(1){
-    animation: tracking-animation 2s ease-in-out infinite;
+    transform: scale(0, 0);
 }
 
 .advantages__tracking-animation > img:nth-child(2){
@@ -560,7 +560,7 @@
     }
 
     .services__card{
-        height: 55vh;
+        height: 480px;
     }
 
 
@@ -575,7 +575,7 @@
     }
 
     .advantages__map{
-        height: 576px;
+        height: 512px;
     }
 
     .advantages__tracking--ship{
@@ -624,6 +624,10 @@
         top: -300px;
     }
 
+    .about-us__carousel-photo{
+        width: 400px;
+    }
+
 }
 
 
@@ -667,7 +671,7 @@
     }
 
     .services__card{
-        height: 40vh;
+        height: 480px;
     }
 
     .services__info-text{
@@ -777,7 +781,7 @@
     }
 
     .services__card{
-        height: 50vh;
+        height: 480px;
         gap: 16px;
     }
 
@@ -880,6 +884,10 @@
 }
     .services{
         padding: 0px 16px 64px 16px;
+    }
+
+    .services__card{
+        height: 360px;
     }
 
     .services__info-text{

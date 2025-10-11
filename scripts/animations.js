@@ -82,10 +82,10 @@ function animationClipTopOnScroll() {
     animationClipTopOnScrollArray.forEach(object => {
         objectRect = object.getBoundingClientRect();
         if (objectRect.bottom > -100 && objectRect.top < window.innerHeight + 100) {
-            objectDif = Math.abs((objectRect.top + objectRect.height / 2) - window.innerHeight / 2);
+            objectDif = Math.abs((objectRect.top) - (window.innerHeight));
             objectRatio = Math.max(1, Math.min(1.5, objectRect.height * objectRect.width / (window.innerHeight * window.innerWidth)));
-            objectClip = (objectDif / window.innerHeight / 2);
-            object.style.clipPath = `inset(${objectClip * 300}px 0 0 0)`
+            objectClip = 1 - (objectDif / (window.innerHeight));
+            object.style.clipPath = `inset(${objectClip * 100}px 0 0 0)`
         }
     })
 }
@@ -160,21 +160,32 @@ window.addEventListener("resize", animationMoveYInverseOnScroll);
 
 const mapGradient = document.querySelector('.advantages__map-gradient');
 const mapTrackers = document.querySelectorAll('.advantages__tracking');
+const trackingPoints = document.querySelectorAll(".advantages__tracking-animation > img:nth-child(1)");
 
 function mapAnimation() {
     mapGradientRect = mapGradient.getBoundingClientRect();
     mapTrackers.forEach(tracker => {
         trackerRect = tracker.getBoundingClientRect();
         if (
-            mapGradientRect.x > (trackerRect.x - window.innerWidth*0.20) &&
+            mapGradientRect.x > (trackerRect.x - window.innerWidth*0.25) &&
             mapGradientRect.x < (trackerRect.x + window.innerWidth*0.05)
         ) {
             tracker.style.transform = "scale(1.2, 1.2)";
+
         } else {
             tracker.style.transform = "scale(1, 1)";
         }
+        trackerPoint = tracker.querySelector(".advantages__tracking-animation > img:nth-child(1)");
+        if (tracker.style.transform != "scale(1, 1)") {
+            trackerPoint.style.animation = "none";
+            void trackerPoint.offsetWidth;
+            trackerPoint.style.animation = "tracking-animation 1.5s ease-out";
+        }
     });
+
+
     requestAnimationFrame(mapAnimation);
 }
+
 
 mapAnimation();

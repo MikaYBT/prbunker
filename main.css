@@ -490,9 +490,9 @@
 
 .about-us__logo{
     position: absolute;
-    top: -350px;
     left: 32px;
     width: 30vw;
+    top: -50px;
     z-index: -2;
     height: min-content;
     align-self: start;
@@ -620,10 +620,6 @@
         width: 600px;
     }
 
-    .about-us__logo{
-        top: -300px;
-    }
-
     .about-us__carousel-photo{
         width: 400px;
     }
@@ -726,7 +722,7 @@
     
     .about-us__logo{
         width: 19vw;
-        top: -150px;
+        top: 0;
     }
 
     .about-us__text{
@@ -866,9 +862,6 @@
     .about-us__header{
         max-width: 300px;
     }
-    .about-us__logo{
-        top: -100px;
-    }
 
     
 }
@@ -955,10 +948,7 @@
         max-width: 250px;
     }
 
-        .about-us__logo{
-        top: -25px;
-    }
-    
+
 
 
 

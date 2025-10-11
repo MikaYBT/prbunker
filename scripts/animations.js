@@ -170,13 +170,13 @@ function mapAnimation() {
             mapGradientRect.x > (trackerRect.x - window.innerWidth*0.25) &&
             mapGradientRect.x < (trackerRect.x + window.innerWidth*0.05)
         ) {
-            tracker.style.transform = "scale(1.2, 1.2)";
+            tracker.style.transform = "scale(1.2)";
 
         } else {
-            tracker.style.transform = "scale(1, 1)";
+            tracker.style.transform = "scale(1)";
         }
         trackerPoint = tracker.querySelector(".advantages__tracking-animation > img:nth-child(1)");
-        if (tracker.style.transform != "scale(1, 1)") {
+        if (tracker.style.transform != "scale(1)") {
             trackerPoint.style.animation = "none";
             void trackerPoint.offsetWidth;
             trackerPoint.style.animation = "tracking-animation 1.5s ease-out";

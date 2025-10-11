@@ -145,7 +145,7 @@ function animationMoveYInverseOnScroll() {
             objectDif = -((objectRect.top + objectRect.height / 2) - window.innerHeight / 2);
             objectRatio = Math.max(1, Math.min(1.5, objectRect.height * objectRect.width / (window.innerHeight * window.innerWidth)));
             objectTransform = (objectDif / (window.innerHeight / 2));
-            object.style.transform = `translate(0%, ${40 * objectTransform}%)`
+            object.style.transform = `translate(0%, ${20 * objectTransform}%)`
         }
     });
 
